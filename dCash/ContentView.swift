@@ -31,11 +31,33 @@ struct ContentView: View {
 
 struct login_screen : View{
     @Binding var displayView:Bool
+    @State var display_signup = false
     var body: some View{
-        Text("This is the login screen!!!")
-        Button("Sign In",action: {
-            self.displayView = false
-        })
+        if display_signup == true{
+            sign_up_screen(displaySignUp: $display_signup)
+        }else{
+            VStack{
+                Text("This is the login screen!!!")
+                Button("Sign In",action: {
+                    self.displayView = false
+                })
+                Button("Sign Up",action: {
+                    self.display_signup = true
+                })
+            }
+        }
+    }
+}
+
+struct sign_up_screen : View{
+    @Binding var displaySignUp:Bool
+    var body: some View{
+        VStack{
+            Text("Sign Up!")
+            Button("Done",action: {
+                self.displaySignUp = false
+            })
+        }
     }
 }
 
