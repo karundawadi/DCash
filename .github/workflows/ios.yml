@@ -12,6 +12,6 @@ jobs:
     - name: Force Xcode 11
       run: sudo xcode-select -switch /Applications/Xcode_11.3.app
     - name: Run tests
-      run: xcodebuild clean test -project "DCash.xcodeproj" -scheme "DCash" -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest"
+      run: xcodebuild clean test -project "dCash.xcodeproj" -scheme "dCash" -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest"
     - name: Build App
-      run: xcodebuild -project "DCash.xcodeproj" -scheme "DCash" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
+      run: xcodebuild -project "dCash.xcodeproj" -scheme "dCash" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
