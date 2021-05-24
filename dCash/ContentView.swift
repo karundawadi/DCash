@@ -32,17 +32,42 @@ struct ContentView: View {
 struct login_screen : View{
     @Binding var displayView:Bool
     @State var display_signup = false
+    @State private var userEmail: String = ""
+    @State private var userPassword: String = ""
+    
     var body: some View{
         if display_signup == true{
             sign_up_screen(displaySignUp: $display_signup)
         }else{
-            VStack{
-                Text("This is the login screen!!!")
-                Button("Sign In",action: {
-                    self.displayView = false
-                })
-                Button("Sign Up",action: {
-                    self.display_signup = true
+            NavigationView{
+                VStack{
+                    TextField("Email",text: $userEmail)
+                        .padding(.horizontal,20)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
+                        
+                    TextField("Password",text:$userPassword)
+                        .padding(.horizontal,20)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
+                        
+                        Button(action: {
+                            self.displayView = false
+                        }){
+                            Text("Sign In")
+                                .padding()
+                                .background(Color.green)
+                                .foregroundColor(Color.white)
+                                .cornerRadius(CGFloat(10),antialiased: true)
+                                .padding(10)
+                        }
+                    
+                }.toolbar(content: {
+                    Button(action: {
+                        self.display_signup = true
+                    }){
+                        Text("Sign Up")
+                    }
                 })
             }
         }
@@ -51,11 +76,56 @@ struct login_screen : View{
 
 struct sign_up_screen : View{
     @Binding var displaySignUp:Bool
-    var body: some View{
-        VStack{
-            Text("Sign Up!")
-            Button("Done",action: {
-                self.displaySignUp = false
+    @State var user_email = ""
+    @State var password = ""
+    
+    var body: some View {
+        NavigationView{
+            VStack{
+                HStack {
+                    VStack {
+                        HStack {
+                            Text("Email")
+                            Spacer()
+                            TextField("Your Email",text:$user_email)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .frame(maxWidth: 150)
+                                .foregroundColor(.gray)
+                                .accentColor(.red)
+                        }
+                        .padding(.horizontal, 20)
+                        
+                        HStack {
+                            Text("Password")
+                            Spacer()
+                            TextField("Enter a password",text:$password)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .frame(maxWidth: 150)
+                                .foregroundColor(.gray)
+                        }
+                        .padding(.horizontal, 20)
+                    }
+                }
+                .padding(.horizontal)
+                .fixedSize(horizontal: false, vertical: true)
+                
+                Button(action: {
+                    self.displaySignUp = false
+                }){
+                    Text("Sign Up")
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(CGFloat(10),antialiased: true)
+                        .padding(10)
+                }
+            }.toolbar(content: {
+                Button(action:{
+                    self.displaySignUp = false
+                    login_screen(displayView: $displaySignUp)
+                }){
+                    Text("Cancel")
+                }
             })
         }
     }

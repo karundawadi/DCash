@@ -16,6 +16,7 @@
 		620B580E265AE3660041A330 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 620B580D265AE3660041A330 /* GoogleService-Info.plist */; };
 		620B580F265AE3660041A330 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 620B580D265AE3660041A330 /* GoogleService-Info.plist */; };
 		620B5810265AE3660041A330 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 620B580D265AE3660041A330 /* GoogleService-Info.plist */; };
+		622752F3265C515100A02042 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 622752F2265C515100A02042 /* Storyboard.storyboard */; };
 		BE2F4096281E6195C1E01C59 /* Pods_dCash_dCashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956AD65A926B36B4EFC4D917 /* Pods_dCash_dCashUITests.framework */; };
 		CC4C9DD1B3AD3150128ED180 /* Pods_dCash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739FD1EFCABDE1D06634E11B /* Pods_dCash.framework */; };
 		ED3F76DF4CCA97BEAA8B5783 /* Pods_dCashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB61C43E5F294582265CBE1 /* Pods_dCashTests.framework */; };
@@ -55,6 +56,7 @@
 		620B57E3265AE04A0041A330 /* dCashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dCashUITests.swift; sourceTree = "<group>"; };
 		620B57E5265AE04A0041A330 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		620B580D265AE3660041A330 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		622752F2265C515100A02042 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		6AF1DEE99E3EBA4BB1597113 /* Pods-dCashTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dCashTests.debug.xcconfig"; path = "Target Support Files/Pods-dCashTests/Pods-dCashTests.debug.xcconfig"; sourceTree = "<group>"; };
 		726D6A30E4AD69280D7A3C8F /* Pods-dCash-dCashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dCash-dCashUITests.debug.xcconfig"; path = "Target Support Files/Pods-dCash-dCashUITests/Pods-dCash-dCashUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		739FD1EFCABDE1D06634E11B /* Pods_dCash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dCash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 		620B57C5265AE0470041A330 /* dCash */ = {
 			isa = PBXGroup;
 			children = (
+				622752F2265C515100A02042 /* Storyboard.storyboard */,
 				620B580D265AE3660041A330 /* GoogleService-Info.plist */,
 				620B57C6265AE0470041A330 /* dCashApp.swift */,
 				620B57C8265AE0470041A330 /* ContentView.swift */,
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				620B57CE265AE04A0041A330 /* Preview Assets.xcassets in Resources */,
+				622752F3265C515100A02042 /* Storyboard.storyboard in Resources */,
 				620B57CB265AE04A0041A330 /* Assets.xcassets in Resources */,
 				620B580E265AE3660041A330 /* GoogleService-Info.plist in Resources */,
 			);
