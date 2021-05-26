@@ -21,7 +21,7 @@ struct addExpense: View {
         ZStack{
             NavigationView{
                 Form{
-             \       Section(header:Text("Expense Details")){
+                    Section(header:Text("Expense Details")){
                         TextField("Expense Name",text : $expense_name)
                         TextField("Expense Amount",text : $expense_amount).keyboardType(.numberPad)
                         Picker(selection:$expense_type,label:Text("Category of expense").bold()){
