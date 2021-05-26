@@ -59,21 +59,8 @@ struct signin: View {
                         Text("Sign Up")
                     }
                 })
-                .onAppear(){
-                    if self.display_signup{
-                        self.display_signup_alert = false
-                    }else{
-                        self.display_signup_alert = true
-                    }
-                }
-                .toast(isShowing:$display_signup_alert,text:Text("Signed up sucessful")).transition(.slide).onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                      withAnimation {
-                        self.display_signup_alert = false
-                      }
-                    }
-                }
-                .toast(isShowing:$show_alert,text:Text("Either the email or password is incorrect"))
+                .toast(isShowing:$display_signup_alert,heading:Text("Signed up sucessful"),content: Text("You can now sign up!")).transition(.slide)
+                .toast(isShowing:$show_alert,heading:Text("Error:"),content:Text("Either the email or password is incorrect"))
             }
         }
     }

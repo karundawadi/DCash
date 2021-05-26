@@ -25,26 +25,37 @@ struct Toast<Presenting>: View where Presenting: View {
     /// The view that will be "presenting" this toast
     let presenting: () -> Presenting
     /// The text to show
-    let text: Text
+    let heading: Text
+    let content: Text
 
     var body: some View {
-
-        GeometryReader { geometry in
-
-            ZStack(alignment: .center) {
-
+        if self.isShowing {             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {                 self.isShowing = false
+            }
+        }
+        return GeometryReader { geometry in
+            
+            ZStack(alignment: .top) {
+                
                 self.presenting()
                     .blur(radius: self.isShowing ? 1 : 0)
 
                 VStack {
-                    self.text
+                    self.heading
+                    self.content
                 }
-                .frame(width: geometry.size.width / 2,
+                .frame(width: geometry.size.width,
                        height: geometry.size.height / 5)
                 .background(Color.secondary.colorInvert())
                 .foregroundColor(Color.primary)
-                .cornerRadius(20)
+                .cornerRadius(2)
                 .transition(.slide)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                      withAnimation {
+                        self.isShowing = false
+                      }
+                    }
+                }
                 .opacity(self.isShowing ? 1 : 0)
             }
 
@@ -56,10 +67,11 @@ struct Toast<Presenting>: View where Presenting: View {
 // Extension for ToastUI
 extension View {
 
-    func toast(isShowing: Binding<Bool>, text: Text) -> some View {
+    func toast(isShowing: Binding<Bool>, heading: Text, content: Text) -> some View {
         Toast(isShowing: isShowing,
               presenting: { self },
-              text: text)
+              heading: heading,
+              content:content)
     }
 
 }
