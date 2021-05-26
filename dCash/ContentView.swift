@@ -83,34 +83,26 @@ struct ContentView: View {
             signin(displayView: $displayView)
         }else{
             TabView{
-                TabView1()
+                addExpense()
                     .tabItem{
-                        Text("1")
+                        Label("Add Expense", systemImage: "plus.circle")
                     }
-                TabView2()
+                totalExpense()
                     .tabItem{
-                        Text("2")
+                        Label("This month", systemImage: "chart.pie")
+                    }
+                reminders().tabItem{
+                    Label("Reminders", systemImage: "list.bullet.rectangle")
+                }
+                
+                profile()
+                    .tabItem {
+                        Label("Profile", systemImage: "person.crop.circle")
                     }
             }
         }
     }
 }
-
-// For tab view 1
-struct TabView1 : View {
-    var currentUser = Auth.auth().currentUser?.email
-    var body: some View{
-        Text(currentUser!)
-    }
-}
-
-// For tab view 2
-struct TabView2 : View {
-    var body: some View{
-        Text("Second Tab View")
-    }
-}
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

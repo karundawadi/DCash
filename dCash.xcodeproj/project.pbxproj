@@ -20,6 +20,10 @@
 		6210611C265D939200DCFD7C /* signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6210611B265D939200DCFD7C /* signup.swift */; };
 		62106121265D942C00DCFD7C /* signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62106120265D942C00DCFD7C /* signin.swift */; };
 		622752F3265C515100A02042 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 622752F2265C515100A02042 /* Storyboard.storyboard */; };
+		62C1AB1B265ED8620069F80A /* addExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C1AB1A265ED8620069F80A /* addExpense.swift */; };
+		62C1AB2E265ED8970069F80A /* totalExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C1AB2D265ED8970069F80A /* totalExpense.swift */; };
+		62C1AB36265ED8A40069F80A /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C1AB35265ED8A40069F80A /* profile.swift */; };
+		62C1AB3E265EEDB90069F80A /* reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C1AB3D265EEDB90069F80A /* reminders.swift */; };
 		7C9DA390531FE2F6A1681C33 /* Pods_dCashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18EEC47BD4547A2CA19E0C4 /* Pods_dCashTests.framework */; };
 		BFB70BDA7C93FC43CB860041 /* Pods_dCash_dCashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E448E66C2E5F50A3887664 /* Pods_dCash_dCashUITests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +66,10 @@
 		6210611B265D939200DCFD7C /* signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signup.swift; sourceTree = "<group>"; };
 		62106120265D942C00DCFD7C /* signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signin.swift; sourceTree = "<group>"; };
 		622752F2265C515100A02042 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		62C1AB1A265ED8620069F80A /* addExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addExpense.swift; sourceTree = "<group>"; };
+		62C1AB2D265ED8970069F80A /* totalExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = totalExpense.swift; sourceTree = "<group>"; };
+		62C1AB35265ED8A40069F80A /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
+		62C1AB3D265EEDB90069F80A /* reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminders.swift; sourceTree = "<group>"; };
 		AD5BC839CD5027375C46385A /* Pods-dCash-dCashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dCash-dCashUITests.debug.xcconfig"; path = "Target Support Files/Pods-dCash-dCashUITests/Pods-dCash-dCashUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6E448E66C2E5F50A3887664 /* Pods_dCash_dCashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dCash_dCashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18EEC47BD4547A2CA19E0C4 /* Pods_dCashTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dCashTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +143,10 @@
 		620B57C5265AE0470041A330 /* dCash */ = {
 			isa = PBXGroup;
 			children = (
+				62C1AB3D265EEDB90069F80A /* reminders.swift */,
+				62C1AB35265ED8A40069F80A /* profile.swift */,
+				62C1AB2D265ED8970069F80A /* totalExpense.swift */,
+				62C1AB1A265ED8620069F80A /* addExpense.swift */,
 				622752F2265C515100A02042 /* Storyboard.storyboard */,
 				620B580D265AE3660041A330 /* GoogleService-Info.plist */,
 				620B57C6265AE0470041A330 /* dCashApp.swift */,
@@ -426,9 +438,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6210611C265D939200DCFD7C /* signup.swift in Sources */,
+				62C1AB1B265ED8620069F80A /* addExpense.swift in Sources */,
 				620B57C9265AE0470041A330 /* ContentView.swift in Sources */,
+				62C1AB3E265EEDB90069F80A /* reminders.swift in Sources */,
 				620B57C7265AE0470041A330 /* dCashApp.swift in Sources */,
+				62C1AB36265ED8A40069F80A /* profile.swift in Sources */,
 				62106121265D942C00DCFD7C /* signin.swift in Sources */,
+				62C1AB2E265ED8970069F80A /* totalExpense.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

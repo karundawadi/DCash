@@ -3,4 +3,54 @@
    uuid = "FC63D48C-5B43-4B7E-B1A9-8E93C45D7C68"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2E71D45-ADDE-494D-8AAD-4FE1D0C44567"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dCash/addExpense.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "addExpense"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "E2E71D45-ADDE-494D-8AAD-4FE1D0C44567 - ad9ea7a29ff6ee62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of dCash.addExpense.(expense_name in _A371CB7E81974A77F91039CEEF4558A3) : Swift.String"
+                  moduleName = "dCash"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karundawadi/Desktop/dCash/dCash/addExpense.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "E2E71D45-ADDE-494D-8AAD-4FE1D0C44567 - ac9200cb575e6630"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dCash.addExpense.init() -&gt; dCash.addExpense"
+                  moduleName = "dCash"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karundawadi/Desktop/dCash/dCash/addExpense.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "57">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
