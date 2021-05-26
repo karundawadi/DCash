@@ -98,8 +98,9 @@ struct ContentView: View {
 
 // For tab view 1
 struct TabView1 : View {
+    var currentUser = Auth.auth().currentUser?.email
     var body: some View{
-        Text("First Tab View")
+        Text(currentUser!)
     }
 }
 
