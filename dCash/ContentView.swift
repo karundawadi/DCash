@@ -45,8 +45,8 @@ struct Toast<Presenting>: View where Presenting: View {
                 }
                 .frame(width: geometry.size.width,
                        height: geometry.size.height / 5)
-                .background(Color.secondary.colorInvert())
-                .foregroundColor(Color.primary)
+                .background(Color.black)
+                .foregroundColor(Color.white)
                 .cornerRadius(2)
                 .transition(.slide)
                 .onAppear {

@@ -59,8 +59,8 @@ struct signin: View {
                         Text("Sign Up")
                     }
                 })
-                .toast(isShowing:$display_signup_alert,heading:Text("Signed up sucessful"),content: Text("You can now sign up!")).transition(.slide)
                 .toast(isShowing:$show_alert,heading:Text("Error:"),content:Text("Either the email or password is incorrect"))
+                #warning("TODO: Implement a forgot password button")
             }
         }
     }
