@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseFirestore
 
 struct addExpense: View {
     // Various varibles involved in this state
@@ -18,6 +20,10 @@ struct addExpense: View {
 //     Data pulled form https://localfirstbank.com/article/budgeting-101-personal-budget-categories/
     
     var body: some View {
+        
+        // Connecting to firestore here
+        let db = Firestore.firestore()
+        
         ZStack{
             NavigationView{
                 Form{

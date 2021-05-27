@@ -19,7 +19,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions
 
 // For toast UI
 struct Toast<Presenting>: View where Presenting: View {
-
+    
     /// The binding that decides the appropriate drawing in the body.
     @Binding var isShowing: Bool
     /// The view that will be "presenting" this toast
@@ -27,10 +27,10 @@ struct Toast<Presenting>: View where Presenting: View {
     /// The text to show
     let heading: Text
     let content: Text
-
+    
     var body: some View {
-        if self.isShowing {             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {                 self.isShowing = false
-            }
+        if self.isShowing {DispatchQueue.main.asyncAfter(deadline: .now() + 3) {                 self.isShowing = false
+        }
         }
         return GeometryReader { geometry in
             
@@ -38,7 +38,7 @@ struct Toast<Presenting>: View where Presenting: View {
                 
                 self.presenting()
                     .blur(radius: self.isShowing ? 1 : 0)
-
+                
                 VStack {
                     self.heading
                     self.content
@@ -51,29 +51,29 @@ struct Toast<Presenting>: View where Presenting: View {
                 .transition(.slide)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                      withAnimation {
-                        self.isShowing = false
-                      }
+                        withAnimation {
+                            self.isShowing = false
+                        }
                     }
                 }
                 .opacity(self.isShowing ? 1 : 0)
             }
-
+            
         }
-
+        
     }
-
+    
 }
 // Extension for ToastUI
 extension View {
-
+    
     func toast(isShowing: Binding<Bool>, heading: Text, content: Text) -> some View {
         Toast(isShowing: isShowing,
               presenting: { self },
               heading: heading,
               content:content)
     }
-
+    
 }
 
 struct ContentView: View {
