@@ -33,13 +33,14 @@ struct addExpense: View {
                         Toggle(isOn: $recurring) {
                             Text("Recurring").bold()
                         }
-                        Button(action:{
-                            print(expense_amount)
-                        }){
-                            Text("Sumbit")
-                        }
                     }
-                }
+                }.toolbar(content: {
+                    Button(action: {
+                        print(self.$expense_name);
+                    }){
+                        Text("Sumbit").bold()
+                    }
+                })
             }
         }
     }
