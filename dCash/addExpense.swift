@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 import FirebaseCore
 import FirebaseFirestore
 
@@ -23,7 +24,8 @@ struct addExpense: View {
         
         // Connecting to firestore here
         let db = Firestore.firestore()
-        
+        let current_user = Auth.auth().currentUser
+        let current_user_info = current_user?.uid
         ZStack{
             NavigationView{
                 Form{
@@ -42,7 +44,29 @@ struct addExpense: View {
                     }
                 }.toolbar(content: {
                     Button(action: {
-                        print(self.$expense_name);
+                        // Using this to convert to the calendar object
+                        let calendar = Calendar(identifier: .gregorian)
+                        let month_year = calendar.dateComponents([.year,.month,.day], from: expense_date)
+                        let createdString = "Users/"+current_user_info!+"/"+String(month_year.year!)+"/"+String(month_year.month!)+"/"+category_of_expenses[expense_type]+"/"+expense_name
+                        let month = String(month_year.month!)
+                        let day = String(month_year.day!)
+                        let year = String(month_year.year!)
+                        print(createdString)
+                        let db_ref = db.document(createdString)
+                        db_ref.setData([
+                            "expense_name":expense_name,
+                            "expense_amount":expense_amount,
+                            "expense_date":month+"-"+day+"-"+year,
+                            "expense_category":category_of_expenses[expense_type],
+                            "recurring":String(recurring)
+                        ]){
+                            err in
+                            if let err = err{
+                                print("Error writing document: \(err)")
+                            }else{
+                                print("Document written succesfully")
+                            }
+                        }
                     }){
                         Text("Sumbit").bold()
                     }
