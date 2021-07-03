@@ -17,6 +17,7 @@ struct addExpense: View {
     @State private var expense_type = 0
     @State private var expense_date = Date()
     @State private var recurring = false
+    @State private var successful = false
     private var category_of_expenses = ["Household","Entertainment","Education","Transportation","Housing","Utilities","Clothing","Medical/HealthCare","Insurance","Supplies","Personal","Debt","Gift"]
 //     Data pulled form https://localfirstbank.com/article/budgeting-101-personal-budget-categories/
     
@@ -64,6 +65,7 @@ struct addExpense: View {
                             if let err = err{
                                 print("Error writing document: \(err)")
                             }else{
+                                successful = true
                                 print("Document written succesfully")
                             }
                         }
@@ -71,6 +73,7 @@ struct addExpense: View {
                         Text("Sumbit").bold()
                     }
                 })
+                .toast(isShowing: $successful, heading: Text("Written to database"), content: Text(""))
             }
         }
     }
